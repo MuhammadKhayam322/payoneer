@@ -1,8 +1,8 @@
 // app/components/features/Cards/WorkforceManagementCard.tsx
 
 import React from "react";
-import FeatureCard from "./FeatureCard";
-
+import FeatureCard from "./ServicesCard";
+import { Brush } from "lucide-react";
 const WorkforceVisual: React.FC = () => {
   const avatars: { bg: string; fill: string }[] = [
     { bg: "#bfdbfe", fill: "#3b82f6" },
@@ -51,9 +51,10 @@ const WorkforceVisual: React.FC = () => {
 
 const WorkforceManagementCard: React.FC = () => (
   <FeatureCard
-    title="Workforce Management"
-    description="Simplify hiring, onboarding, and paying global teams across 160+ countries while staying aligned with local compliance."
-    visual={<WorkforceVisual />}
+    icon={<Brush size={24} />}
+    title="Graphic Design"
+    description="High-quality branding and visuals — from logos to full identity systems."
+    
   />
 );
 

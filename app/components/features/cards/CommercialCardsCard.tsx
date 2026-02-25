@@ -1,8 +1,8 @@
 // app/components/features/Cards/CommercialCardsCard.tsx
 
 import React from "react";
-import FeatureCard from "./FeatureCard";
-
+import FeatureCard from "./ServicesCard";
+import {  TabletSmartphone } from "lucide-react";
 const CommercialCardVisual: React.FC = () => (
   <div
     style={{
@@ -41,9 +41,10 @@ const CommercialCardVisual: React.FC = () => (
 
 const CommercialCardsCard: React.FC = () => (
   <FeatureCard
-    title="Commercial Cards"
-    description="Pay global expenses anywhere Mastercard® is accepted, track team spend, and set custom spending limits."
-    visual={<CommercialCardVisual />}
+    icon={<TabletSmartphone size={24} />}
+    title="Application Development"
+    description="Custom web apps and enterprise portals built for performance and scalability."
+    
   />
 );
 

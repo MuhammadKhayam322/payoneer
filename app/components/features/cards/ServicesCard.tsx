@@ -4,14 +4,15 @@
 
 import React, { useState } from "react";
 import { FeatureCardProps } from "../types";
-import LearnMoreLink from "../LearnMoreLink";
+
 
 const FeatureCard: React.FC<FeatureCardProps> = ({
+  icon,
   title,
   description,
-  tag,
   highlighted = false,
-  visual,
+  
+  
 }) => {
   const [hovered, setHovered] = useState(false);
 
@@ -35,22 +36,23 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         overflow: "hidden",
       }}
     >
-      {tag && (
+      {/* Icon at the top */}
+      {icon && (
         <div
           style={{
-            display: "inline-block",
-            background: "#0052cc",
-            color: "white",
-            fontSize: "10px",
-            fontWeight: 700,
-            letterSpacing: "0.08em",
-            padding: "3px 8px",
-            borderRadius: "4px",
-            marginBottom: "12px",
-            width: "fit-content",
+            width: "48px",
+            height: "48px",
+            borderRadius: "12px",
+            background: "#EFF6FF",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            marginBottom: "16px",
+            color: "#2563EB",
+            flexShrink: 0,
           }}
         >
-          {tag}
+          {icon}
         </div>
       )}
 
@@ -77,10 +79,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         {description}
       </div>
 
-      <div style={{ marginTop: "14px", display: "flex", flexDirection: "column", gap: "12px" }}>
-        <LearnMoreLink />
-        <div style={{ height: "90px" }}>{visual}</div>
-      </div>
+     
     </div>
   );
 };

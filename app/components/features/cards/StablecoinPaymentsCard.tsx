@@ -1,7 +1,7 @@
 // app/components/features/Cards/StablecoinPaymentsCard.tsx
-
+import { Video } from "lucide-react";
 import React from "react";
-import FeatureCard from "./FeatureCard";
+import FeatureCard from "./ServicesCard";
 
 const StablecoinVisual: React.FC = () => (
   <div
@@ -53,11 +53,11 @@ const StablecoinVisual: React.FC = () => (
 
 const StablecoinPaymentsCard: React.FC = () => (
   <FeatureCard
-    tag="COMING SOON"
-    title="Stablecoin Payments"
-    description="Stablecoin payments settle in seconds 24/7 – no banking hours, no weekends, no borders. Payoneer brings that speed straight into your workflows."
+    icon={<Video size={24} />}
+    title="Digital Marketing"
+    description="A complete range of digital marketing solutions — SEO, social media, ads, and more."
     highlighted
-    visual={<StablecoinVisual />}
+    
   />
 );
 

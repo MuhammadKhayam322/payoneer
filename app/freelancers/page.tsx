@@ -1,10 +1,20 @@
-export default function FreelancersPage() {
+import React from 'react'
+import FreelancerFeatures from '../components/Freelencer/Freelancerfeatures'
+import PayoneerHero from '../components/Freelencer/PayoneerHero'
+import FeesMadeEasy from '../components/Freelencer/Feesmadeeasy'
+import ResourceHub from '../components/ResourceHub'
+import SupportSection from '../components/Freelencer/SupportSection'
+
+function page() {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-20">
-      <h1 className="text-4xl font-bold mb-6">Freelancers</h1>
-      <p className="text-lg text-gray-600">
-        This is the freelancers main page.
-      </p>
+    <div>
+      <PayoneerHero/>
+      <FreelancerFeatures/>
+      <FeesMadeEasy/>
+      <ResourceHub/>
+      <SupportSection/>
     </div>
-  );
+  )
 }
+
+export default page

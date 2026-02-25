@@ -2,8 +2,8 @@
 
 import React from "react";
 import { CurrencyRowProps } from "../types";
-import FeatureCard from "./FeatureCard";
-
+import FeatureCard from "./ServicesCard";
+import { Clapperboard } from "lucide-react";
 const CurrencyRow: React.FC<CurrencyRowProps> = ({ flag, code, amount }) => (
   <div
     style={{
@@ -52,9 +52,10 @@ const MulticurrencyVisual: React.FC = () => {
 
 const MulticurrencyAccountsCard: React.FC = () => (
   <FeatureCard
-    title="Multicurrency Accounts"
-    description="Let your global clients pay you directly in multiple currencies – easy, fast, and friction-free."
-    visual={<MulticurrencyVisual />}
+   icon={<Clapperboard size={24} />}
+    title="Video & Animations"
+    description="Engaging videos, motion graphics, and animations that bring ideas to life."
+   
   />
 );
 

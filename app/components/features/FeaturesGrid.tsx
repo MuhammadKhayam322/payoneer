@@ -52,11 +52,13 @@ const FeaturesGrid: React.FC = () => (
 
     <section className="features-section">
       <div className="features-heading">
-        <h2>
-          All you need to grow
-          <br />
-          your business globally
-        </h2>
+        <h2>Discover Our Services</h2>
+         </div>
+        <div className="features-heading">
+        <p className="black text-lg max-w-6xl mx-auto" style={{ fontSize: "16px", lineHeight: "1.75" }}>
+          We provide a full spectrum of creative and digital services to help your brand grow.
+        </p>
+       
       </div>
 
       <div className="features-grid">

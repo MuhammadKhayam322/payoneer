@@ -2,8 +2,8 @@
 
 import React from "react";
 import { BarProps } from "../types";
-import FeatureCard from "./FeatureCard";
-
+import FeatureCard from "./ServicesCard";
+import { TabletSmartphone } from 'lucide-react';
 const Bar: React.FC<BarProps> = ({ height, active = false }) => (
   <div
     style={{
@@ -45,9 +45,10 @@ const BusinessFundingVisual: React.FC = () => {
 
 const BusinessFundingCard: React.FC = () => (
   <FeatureCard
-    title="Business Funding"
-    description="Access prequalified capital – right inside Payoneer – to seize opportunities, steady cash flow, and keep growing."
-    visual={<BusinessFundingVisual />}
+  icon={<TabletSmartphone size={24} />}
+    title="Mobile App Development"
+    description="Cross-platform iOS and Android apps with seamless UX and strong performance."
+   
   />
 );
 

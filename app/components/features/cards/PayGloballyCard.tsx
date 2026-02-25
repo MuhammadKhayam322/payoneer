@@ -1,8 +1,8 @@
 // app/components/features/Cards/PayGloballyCard.tsx
 
 import React from "react";
-import FeatureCard from "./FeatureCard";
-
+import FeatureCard from "./ServicesCard";
+import { LibraryBig } from "lucide-react";
 const PayGloballyVisual: React.FC = () => {
   const dots: { color: string; deg: number }[] = [
     { color: "#3b82f6", deg: 0 },
@@ -84,9 +84,10 @@ const PayGloballyVisual: React.FC = () => {
 
 const PayGloballyCard: React.FC = () => (
   <FeatureCard
-    title="Pay Globally"
-    description="Send single, batch, or recurring payments worldwide, with automated scheduling that saves time."
-    visual={<PayGloballyVisual />}
+    icon={<LibraryBig size={24} />}
+    title="Information Technology"
+    description="End-to-end IT consulting and infrastructure support for modern businesses."
+    
   />
 );
 

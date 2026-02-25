@@ -3,16 +3,14 @@
 import { ReactNode } from "react";
 
 export interface FeatureCardProps {
+  icon?: ReactNode;
   title: string;
   description: string;
   tag?: string;
   highlighted?: boolean;
-  visual: ReactNode;
+  
 }
 
-export interface LearnMoreLinkProps {
-  href?: string;
-}
 
 export interface CurrencyRowProps {
   flag: string;
