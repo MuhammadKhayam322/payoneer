@@ -31,9 +31,18 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="w-full relative z-50">
+    <header  style={{
+        position: "sticky",   // 🔥 makes it sticky
+        top: 0,
+        zIndex: 9999,
+        width: "100%",
+        background:
+          "linear-gradient(135deg, #0a0a14 0%, #0d0f1a 50%, #080c18 100%)",
+        borderBottom: "1px solid #e5e5e5",
+      }}
+    >
      
-      <div className="w-full bg-white border-b">
+      <div className=" w-full bg-white border-b ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           {/* Logo */}
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
@@ -43,7 +52,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+          <nav className=" hidden md:flex items-center gap-8 text-gray-700 font-medium ">
             <div className="flex items-center gap-1 cursor-pointer hover:text-black">
               <Link href="/">Home</Link>
             </div>
@@ -52,9 +61,9 @@ export default function Header() {
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setServicesOpen((prev) => !prev)}
-                className="flex items-center gap-1 cursor-pointer hover:text-black text-gray-700 font-medium bg-transparent border-none p-0"
+                className="flex items-center gap-1 cursor-pointer hover:text-black text-white font-medium bg-transparent border-none p-0"
               >
-                Services
+                <Link href="/services">Services</Link>
                 <ChevronDown
                   size={16}
                   className={`transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}

@@ -1,48 +1,221 @@
 "use client";
 
-import { useRef } from "react";
+import { useState, useEffect } from "react";
 
 const customers = [
   {
-    id: "freelancers",
-    title: "Freelancers",
-    description:
-      "Freelance opportunities are everywhere, so you need a payments solution that is truly global. Our Payoneer account lets you save time and effort as you get paid, make payments, access earnings, and manage your money.",
-    video: "freelancer-video.mp4",
+    id: "project",
+    image: "/project.png",
     imageAlt: "Freelancer working on laptop",
   },
   {
-    id: "businesses",
-    title: "Businesses",
-    description:
-      "Global means global, so we break down the borders and barriers of international payments for businesses. Pay suppliers, contractors, and service providers in multiple currencies.",
-    video: "/business-video.mp4",
+    id: "project1",
+    image: "/project1.png",
     imageAlt: "Business people collaborating",
   },
   {
-    id: "marketplaces",
-    title: "Marketplaces",
-    description:
-      "While you're looking after your sellers, we're taking care of all your international payments needs. Reach new markets with ease and lead your way with advanced infrastructure.",
-    video: "/marketplace-video.mp4",
+    id: "project2",
+    image: "/project2.png",
+    imageAlt: "Marketplace seller with products",
+  },
+  {
+    id: "project3",
+    image: "/project3.png",
+    imageAlt: "Marketplace seller with products",
+  },
+  {
+    id: "project4",
+    image: "/project4.png",
+    imageAlt: "Marketplace seller with products",
+  },
+  {
+    id: "project5",
+    image: "/project5.png",
+    imageAlt: "Marketplace seller with products",
+  },
+  {
+    id: "project6",
+    image: "/project6.png",
+    imageAlt: "Marketplace seller with products",
+  },
+    {
+    id: "project7",
+    image: "/project7.png",
+    imageAlt: "Marketplace seller with products",
+  },
+   {
+    id: "project8",
+    image: "/project8.png",
     imageAlt: "Marketplace seller with products",
   },
 ];
 
+type Customer = (typeof customers)[0];
+
 export default function WhoAreOurCustomers() {
+  const [lightbox, setLightbox] = useState<Customer | null>(null);
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightbox(null);
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = lightbox ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [lightbox]);
+
   return (
     <section
       style={{
-        background: "#ffffff",
+        background:
+          "linear-gradient(135deg, #0a0a14 0%, #0d0f1a 50%, #080c18 100%)",
         padding: "80px 40px",
         fontFamily: "'DM Sans', sans-serif",
       }}
     >
-      {/* Google Font */}
       <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet"
       />
+
+      <style>{`
+        /* Grid */
+        .cards-grid {
+          max-width: 1100px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 28px;
+        }
+
+        /* Card */
+        .card {
+          display: flex;
+          flex-direction: column;
+          border-radius: 14px;
+          overflow: hidden;
+          background: rgba(255,255,255,0.04);
+          border: 1px solid rgba(255,255,255,0.08);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+        }
+
+        /* Image wrapper - pan on hover */
+        .card-image-wrapper {
+          position: relative;
+          width: 100%;
+          height: 220px;
+          overflow: hidden;
+          cursor: pointer;
+        }
+        .card-image-wrapper img {
+          width: 100%;
+          height: 150%;
+          object-fit: cover;
+          object-position: center bottom;
+          display: block;
+          transition: object-position 0.6s ease;
+        }
+        .card-image-wrapper:hover img {
+          object-position: center top;
+        }
+
+        /* Button area below image */
+        .card-footer {
+          padding: 16px 18px;
+          display: flex;
+          justify-content: center;
+        }
+
+        .explore-btn {
+          padding: 10px 28px;
+          background: #ffffff;
+          color: #0a0a14;
+          border: none;
+          border-radius: 6px;
+          font-size: 13px;
+          font-weight: 600;
+          cursor: pointer;
+          width: 100%;
+          font-family: 'DM Sans', sans-serif;
+          transition: background 0.2s, color 0.2s;
+          letter-spacing: 0.02em;
+        }
+        .explore-btn:hover {
+          background: #4F46E5;
+          color: #fff;
+        }
+
+        /* Lightbox */
+        .lightbox-backdrop {
+          position: fixed;
+          inset: 0;
+          background: rgba(0,0,0,0.92);
+          z-index: 9999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          animation: lbFadeIn 0.25s ease;
+          padding: 20px;
+        }
+        @keyframes lbFadeIn {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+        }
+        .lightbox-img {
+          max-width: 100%;
+          max-height: 90vh;
+          width: auto;
+          height: auto;
+          object-fit: contain;
+          border-radius: 10px;
+          animation: lbZoomIn 0.3s cubic-bezier(0.16,1,0.3,1);
+          display: block;
+        }
+        @keyframes lbZoomIn {
+          from { opacity: 0; transform: scale(0.92); }
+          to   { opacity: 1; transform: scale(1); }
+        }
+        .lightbox-close {
+          position: fixed;
+          top: 20px;
+          right: 24px;
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          background: rgba(255,255,255,0.15);
+          border: 1px solid rgba(255,255,255,0.3);
+          color: #fff;
+          font-size: 22px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.2s;
+          z-index: 10000;
+        }
+        .lightbox-close:hover {
+          background: rgba(255,255,255,0.28);
+        }
+
+        @media (max-width: 768px) {
+          .cards-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 480px) {
+          .cards-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+      `}</style>
 
       {/* Header */}
       <div style={{ textAlign: "center", marginBottom: "64px" }}>
@@ -50,182 +223,54 @@ export default function WhoAreOurCustomers() {
           style={{
             fontSize: "clamp(22px, 3vw, 30px)",
             fontWeight: 600,
-            color: "#111",
+            color: "#f8f1f1",
             marginBottom: "14px",
           }}
         >
-          Who are our customers?
+          Award Winning Projects
         </h2>
-
-        <div
-          style={{
-            width: "40px",
-            height: "3px",
-            background: "#4F46E5",
-            margin: "0 auto",
-            borderRadius: "2px",
-          }}
-        />
       </div>
 
-      {/* Rows */}
-      <div
-        style={{
-          maxWidth: "860px",
-          margin: "0 auto",
-          display: "flex",
-          flexDirection: "column",
-          gap: "48px",
-        }}
-      >
-        {customers.map((customer, index) => (
-          <CustomerRow key={customer.id} customer={customer} index={index} />
+      {/* Cards Grid */}
+      <div className="cards-grid">
+        {customers.map((customer) => (
+          <div key={customer.id} className="card">
+            {/* Image with pan effect */}
+            <div className="card-image-wrapper">
+              <img src={customer.image} alt={customer.imageAlt} />
+            </div>
+
+            {/* Explore button below */}
+            <div className="card-footer">
+              <button
+                className="explore-btn"
+                onClick={() => setLightbox(customer)}
+              >
+                Explore more →
+              </button>
+            </div>
+          </div>
         ))}
       </div>
+
+      {/* Fullscreen Lightbox */}
+      {lightbox && (
+        <div className="lightbox-backdrop" onClick={() => setLightbox(null)}>
+          <button
+            className="lightbox-close"
+            onClick={() => setLightbox(null)}
+            aria-label="Close"
+          >
+            ✕
+          </button>
+          <img
+            className="lightbox-img"
+            src={lightbox.image}
+            alt={lightbox.imageAlt}
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </section>
-  );
-}
-
-function CustomerRow({
-  customer,
-  index,
-}: {
-  customer: (typeof customers)[0];
-  index: number;
-}) {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-
-  const playVideo = () => {
-    if (videoRef.current) {
-      videoRef.current.currentTime = 0;
-      videoRef.current.play();
-    }
-  };
-
-  const stopVideo = () => {
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
-  };
-
-  const imageOnLeft = index % 2 === 0;
-
-  const videoBlock = (
-    <div
-      onMouseEnter={playVideo}
-      onMouseLeave={stopVideo}
-      style={{
-        flex: "1",
-        position: "relative",
-        borderRadius: "12px",
-        overflow: "hidden",
-        minHeight: "240px",
-        background: "#000",
-        cursor: "pointer",
-      }}
-    >
-      <video
-        ref={videoRef}
-        src={customer.video}
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-        }}
-      />
-
-      {/* Dark Overlay */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background: "rgba(0,0,0,0.2)",
-        }}
-      />
-
-      {/* Play Button */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: "16px",
-          right: "16px",
-          width: "42px",
-          height: "42px",
-          borderRadius: "50%",
-          background: "rgba(255,255,255,0.18)",
-          backdropFilter: "blur(10px)",
-          border: "1px solid rgba(255,255,255,0.4)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          pointerEvents: "none",
-        }}
-      >
-        <svg width="14" height="14" viewBox="0 0 12 12" fill="none">
-          <path d="M3 2l7 4-7 4V2z" fill="white" />
-        </svg>
-      </div>
-    </div>
-  );
-
-  const textBlock = (
-    <div
-      style={{
-        flex: "1",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
-    >
-      <h3 style={{ fontSize: "22px", fontWeight: 600, marginBottom: "14px" }}>
-        {customer.title}
-      </h3>
-
-      <p
-        style={{
-          fontSize: "14px",
-          color: "#555",
-          lineHeight: "1.7",
-          marginBottom: "24px",
-          maxWidth: "360px",
-        }}
-      >
-        {customer.description}
-      </p>
-
-      <button
-        style={{
-          padding: "10px 22px",
-          background: "#111",
-          color: "#fff",
-          border: "none",
-          borderRadius: "6px",
-          fontSize: "13px",
-          cursor: "pointer",
-          width: "fit-content",
-        }}
-      >
-        Explore more →
-      </button>
-    </div>
-  );
-
-  return (
-    <div
-      style={{
-        display: "flex",
-        gap: "48px",
-        alignItems: "center",
-        flexDirection: imageOnLeft ? "row" : "row-reverse",
-      }}
-    >
-      {videoBlock}
-      {textBlock}
-    </div>
   );
 }

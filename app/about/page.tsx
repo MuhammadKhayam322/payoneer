@@ -1,20 +1,16 @@
 import React from 'react'
-import AboutPayoneer from '../components/aboutpayoneer/Aboutpayoneer'
-import GlobalCommerceSection from '../components/aboutpayoneer/Globalcommercesection'
-import CrossBorderSection from '../components/aboutpayoneer/Crossbordersection'
-import FactsStats from '../components/FactsStats'
-import FlowWithMoreGo from '../components/aboutpayoneer/Flowwithmorego'
-import HowWeDoIt from '../components/aboutpayoneer/Howwedoit'
+import About from '../components/about/AboutBrandRaize'
+import GlobalCommerceSection from '../components/about/Globalcommercesection'
+import FeaturesGrid from '../components/FeaturesGrid'
+
 
 function page() {
   return (
     <div>
-       <AboutPayoneer/>
+       <About/>
        <GlobalCommerceSection/> 
-       <CrossBorderSection/>
-       <FactsStats/>
-       <FlowWithMoreGo/>
-       <HowWeDoIt/>
+       <FeaturesGrid/>
+     
     </div>
   )
 }

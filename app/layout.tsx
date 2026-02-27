@@ -1,8 +1,7 @@
 import "./globals.css";
-
-
 import Navbar from "./components/Navbar";
-import PayoneerFooter from "./components/PayoneerFooter";
+import PayoneerFooter from "./components/FooterSection";
+
 export default function RootLayout({
   children,
 }: {
@@ -11,14 +10,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-    
-          
-          <Navbar />
-          
-          {children}
-      <PayoneerFooter /> 
+        <Navbar />
+        <main className="pt-16">{children}</main>
+        <PayoneerFooter />
       </body>
-      
     </html>
   );
 }

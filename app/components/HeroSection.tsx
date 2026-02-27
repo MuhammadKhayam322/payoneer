@@ -14,7 +14,7 @@ const AvatarBadge: React.FC<AvatarBadgeProps> = ({
   style,
 }) => (
   <div
-    className="absolute flex items-center gap-2 bg-white rounded-full shadow-lg pr-3"
+    className="absolute flex items-center gap-2  rounded-full shadow-lg pr-3"
     style={{ zIndex: 20, ...style }}
   >
     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden flex-shrink-0 border-2 border-white shadow">
@@ -50,14 +50,16 @@ const AvatarBadge: React.FC<AvatarBadgeProps> = ({
 const PaymentHero: React.FC = () => {
   return (
     <div
-      className="relative w-full overflow-hidden bg-gray-50"
-      style={{ minHeight: "520px", height: "90vh", maxHeight: "700px" }}
+      className="relative w-full overflow-hidden "
+      style={{ minHeight: "520px", height: "90vh", maxHeight: "700px",  background:
+          "linear-gradient(135deg, #0a0a14 0%, #0d0f1a 50%, #080c18 100%)" }}
     >
       {/* Gradient blobs - background decorations */}
       <div
         className="absolute top-8 right-8 w-24 h-24 sm:w-32 sm:h-32 rounded-full opacity-60"
         style={{
-          background: "radial-gradient(circle, #a78bfa, #818cf8)",
+           background:
+          "linear-gradient(135deg, #0a0a14 0%, #0d0f1a 50%, #080c18 100%)",
           filter: "blur(8px)",
           zIndex: 1,
         }}

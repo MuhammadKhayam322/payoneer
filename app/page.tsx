@@ -1,22 +1,24 @@
 import React from 'react'
 import PaymentHero from './components/HeroSection'
-import FeaturesGrid from './components/features/FeaturesGrid'
-import FactsStats from './components/FactsStats'
-import BussinesswithPayoneer from './components/BussinesswithPayoneer'
+import FeaturesGrid from './components/FeaturesGrid'
+import FactsStats from './components/BrandRaizeLeader'
+import EmpoweringTech from './components/EmpoweringTech'
 import WhoAreOurCustomers from './components/WhoAreOurCustomers'
-import ResourceHub from './components/ResourceHub'
+import WhyChoiceBrandraize from './components/WhyChoiceBrandraize'
+
 
 
 function page() {
   return (
-    <div>
+    <div >
 
-  <PaymentHero/>
-<FeaturesGrid />;
-<FactsStats/>;
-<BussinesswithPayoneer/>
+<PaymentHero/>
+<FeaturesGrid />
+<FactsStats/>
+<EmpoweringTech/>
 <WhoAreOurCustomers/>
-<ResourceHub/>
+<WhyChoiceBrandraize/>
+
 
     </div>
   )
