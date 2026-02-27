@@ -36,8 +36,7 @@ export default function Header() {
         top: 0,
         zIndex: 9999,
         width: "100%",
-        background:
-          "linear-gradient(135deg, #0a0a14 0%, #0d0f1a 50%, #080c18 100%)",
+        background: "#ffffff",
         borderBottom: "1px solid #e5e5e5",
       }}
     >
@@ -61,7 +60,7 @@ export default function Header() {
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setServicesOpen((prev) => !prev)}
-                className="flex items-center gap-1 cursor-pointer hover:text-black text-white font-medium bg-transparent border-none p-0"
+                className="flex items-center gap-1 cursor-pointer hover:text-black text-gray-700 font-medium bg-transparent border-none p-0"
               >
                 <Link href="/services">Services</Link>
                 <ChevronDown
@@ -152,7 +151,7 @@ export default function Header() {
               onClick={() => setMobileServicesOpen((prev) => !prev)}
               className="flex items-center gap-2 font-medium text-gray-700 w-full text-left bg-transparent border-none p-0"
             >
-              Services
+             <Link href="/services">Services</Link>
               <ChevronDown
                 size={16}
                 className={`transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`}

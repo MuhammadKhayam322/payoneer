@@ -39,7 +39,7 @@ export default function OurServices(): ReactElement {
           width: "180px",
           height: "180px",
           borderRadius: "50%",
-          background: "linear-gradient(135deg, #f43f5e, #ec4899)",
+          background: "white",
           filter: "blur(55px)",
           opacity: 0.3,
           pointerEvents: "none",
@@ -82,8 +82,8 @@ export default function OurServices(): ReactElement {
         {/* CTA */}
         <button
           style={{
-            background: "#f8f3f3",
-            color: "#0a0202",
+            background: "#f3eded",
+            color: "#0e0d0d",
             border: "none",
             borderRadius: "50px",
             padding: "16px 36px",
@@ -93,12 +93,7 @@ export default function OurServices(): ReactElement {
             letterSpacing: "0.2px",
             transition: "background 0.2s",
           }}
-          onMouseEnter={(e) =>
-            ((e.target as HTMLButtonElement).style.background = "#333")
-          }
-          onMouseLeave={(e) =>
-            ((e.target as HTMLButtonElement).style.background = "#111")
-          }
+         
         >
           Explore Services
         </button>

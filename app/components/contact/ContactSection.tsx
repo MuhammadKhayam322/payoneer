@@ -75,7 +75,8 @@ export default function ContactPage(): ReactElement {
   return (
     <section
       style={{
-        background: "radial-gradient(ellipse at center, #0d1b4b 0%, #050d2e 100%)",
+          background:
+          "linear-gradient(135deg, #0a0a14 0%, #0d0f1a 50%, #080c18 100%)",
         minHeight: "100vh",
         padding: "60px 24px",
         fontFamily: "'Helvetica Neue', Arial, sans-serif",
@@ -83,17 +84,7 @@ export default function ContactPage(): ReactElement {
         overflow: "hidden",
       }}
     >
-      {/* Stars Background */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-          pointerEvents: "none",
-        }}
-      />
-
+    
       <div style={{ position: "relative", zIndex: 1, maxWidth: "1000px", margin: "0 auto" }}>
 
         {/* Info Cards */}

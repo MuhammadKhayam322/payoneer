@@ -51,15 +51,20 @@ const PaymentHero: React.FC = () => {
   return (
     <div
       className="relative w-full overflow-hidden "
-      style={{ minHeight: "520px", height: "90vh", maxHeight: "700px",  background:
-          "linear-gradient(135deg, #0a0a14 0%, #0d0f1a 50%, #080c18 100%)" }}
+      style={{
+        minHeight: "520px",
+        height: "90vh",
+        maxHeight: "700px",
+        background:
+          "linear-gradient(135deg, #0a0a14 0%, #0d0f1a 50%, #080c18 100%)",
+      }}
     >
       {/* Gradient blobs - background decorations */}
       <div
         className="absolute top-8 right-8 w-24 h-24 sm:w-32 sm:h-32 rounded-full opacity-60"
         style={{
-           background:
-          "linear-gradient(135deg, #0a0a14 0%, #0d0f1a 50%, #080c18 100%)",
+          background:
+            "linear-gradient(135deg, #0a0a14 0%, #0d0f1a 50%, #080c18 100%)",
           filter: "blur(8px)",
           zIndex: 1,
         }}
@@ -156,7 +161,7 @@ const PaymentHero: React.FC = () => {
         <div style={{ marginTop: "-25vh" }}>
           <h1
             className="
-    font-bold text-gray-900 leading-tight mb-6
+    font-bold text-gray-300 leading-tight mb-6
     text-4xl
     sm:text-5xl
     md:text-6xl
@@ -165,10 +170,10 @@ const PaymentHero: React.FC = () => {
   "
             style={{ maxWidth: "900px" }}
           >
-          Elevating Brands Above the Noise
+            Elevating Brands Above the Noise
           </h1>
           <p
-            className="text-gray-500 mb-7 sm:mb-9 mx-auto
+            className="text-gray-300 mb-7 sm:mb-9 mx-auto
             text-sm sm:text-base md:text-lg"
             style={{ maxWidth: "480px" }}
           >
@@ -176,16 +181,16 @@ const PaymentHero: React.FC = () => {
             specialize in digital marketing, web & app development, branding,
             and IT solutions to help businesses grow with measurable impact.
           </p>
-          <Link href="/register">
+          <Link href="/contact">
             <button
-              className="text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105
-              px-6 py-12 text-sm sm:px-10 sm:py-4 sm:text-base md:text-lg "
+              className="text-black font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105
+              px-6 py-9 text-sm sm:px-10 sm:py-4 sm:text-base md:text-lg "
               style={{
-                background: "linear-gradient(135deg, #6d28d9, #7c3aed)",
+                background: "white",
                 marginTop: "1rem",
               }}
             >
-             Get In Touch
+              Get In Touch
             </button>
           </Link>
         </div>

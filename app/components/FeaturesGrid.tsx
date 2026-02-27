@@ -17,7 +17,7 @@ const FeaturesGrid: React.FC = () => (
       .features-section {
         font-family: 'DM Sans', sans-serif;
          background:
-          "linear-gradient(135deg, #0a0a14 0%, #0d0f1a 50%, #080c18 100%)"
+        "linear-gradient(135deg, #0a0a14 0%, #0d0f1a 50%, #080c18 100%)"
         min-height: 100vh;
         display: flex;
         flex-direction: column;

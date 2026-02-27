@@ -1,7 +1,7 @@
 import React from 'react'
 import OurServices from '../components/Services/OurServices'
 import TechStack from '../components/Services/TecStack'
-import TrustedPartner from '../components/Services/Trustedpartner'
+import TrustedPartner from '../components/Services/Services'
 
 
 function page() {

@@ -136,26 +136,7 @@ export default function TechStack() {
         padding:    "72px 40px 80px",
       }}
     >
-      {/* Stars — client-only to avoid hydration mismatch */}
-      {mounted && (
-        <div style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
-          {STARS.map((s, i) => (
-            <div
-              key={i}
-              style={{
-                position:     "absolute",
-                borderRadius: "50%",
-                background:   "white",
-                width:        `${s.width}px`,
-                height:       `${s.height}px`,
-                top:          `${s.top}%`,
-                left:         `${s.left}%`,
-                opacity:      s.opacity,
-              }}
-            />
-          ))}
-        </div>
-      )}
+     
 
       {/* ── Heading ── */}
       <div
@@ -244,6 +225,21 @@ export default function TechStack() {
           </div>
         ))}
       </div>
+        {/* Top-right teal blob */}
+      <div
+        style={{
+          position: "absolute",
+          top: "-30px",
+          left: "-60px",
+          width: "200px",
+          height: "200px",
+          borderRadius: "50%",
+          background: "linear-gradient(135deg, #06b6d4, #3b82f6)",
+          filter: "blur(60px)",
+          opacity: 0.35,
+          pointerEvents: "none",
+        }}
+      />
     </section>
   );
 }

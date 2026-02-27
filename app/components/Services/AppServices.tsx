@@ -14,7 +14,7 @@ const cards = [
     ),
     title: "Cloud Solutions",
     description: "Scalable and secure cloud infrastructure",
-    color: "#4f46e5",
+    color: "linear-gradient(135deg, #717732, #05063d)",
   },
   {
     icon: (
@@ -29,7 +29,7 @@ const cards = [
     ),
     title: "IT Infrastructure",
     description: "Comprehensive IT infrastructure setup and management.",
-    color: "#7c3aed",
+    color: "linear-gradient(135deg, #717732, #05063d)",
   },
   {
     icon: (
@@ -40,7 +40,7 @@ const cards = [
     ),
     title: "Cybersecurity Services",
     description: "Protect your business with advanced cybersecurity.",
-    color: "#6d28d9",
+    color: "linear-gradient(135deg, #717732, #05063d)",
   },
   {
     icon: (
@@ -57,7 +57,7 @@ const cards = [
     ),
     title: "Network Management",
     description: "Efficient networking and connectivity solutions.",
-    color: "#4f46e5",
+    color: "linear-gradient(135deg, #717732, #05063d)",
   },
   {
     icon: (
@@ -67,7 +67,7 @@ const cards = [
     ),
     title: "Software Support & Maintenance",
     description: "Ongoing software updates, bug fixes, and support.",
-    color: "#7c3aed",
+    color: "linear-gradient(135deg, #717732, #05063d)",
   },
   {
     icon: (
@@ -79,7 +79,7 @@ const cards = [
     ),
     title: "Database Management",
     description: "Reliable database design, monitoring, and optimization.",
-    color: "#6d28d9",
+    color: "linear-gradient(135deg, #717732, #05063d)",
   },
 ];
 

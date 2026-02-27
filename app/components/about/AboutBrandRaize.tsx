@@ -39,8 +39,8 @@ export default function About() {
         style={{
           position: "absolute",
           inset: 0,
-          background:
-            "linear-gradient(120deg, rgba(140,60,180,0.78) 0%, rgba(100,60,200,0.72) 35%, rgba(60,100,210,0.70) 65%, rgba(40,140,220,0.68) 100%)",
+        background:
+          "linear-gradient(135deg, #0a0a14 0%, #0d0f1a 50%, #080c18 100%)",
           zIndex: 1,
         }}
       />

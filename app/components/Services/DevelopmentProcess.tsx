@@ -48,7 +48,7 @@ export default function DevelopmentProcess(): ReactElement {
           <div
             key={i}
             style={{
-              background: "linear-gradient(135deg, #f59e0b, #fbbf24)",
+              background: "linear-gradient(135deg, #424040, #d1b885)",
               borderRadius: "12px",
               padding: "24px 16px",
               textAlign: "center",
@@ -87,7 +87,7 @@ export default function DevelopmentProcess(): ReactElement {
           <div
             key={i}
             style={{
-              background: "linear-gradient(135deg, #f59e0b, #fbbf24)",
+             background: "linear-gradient(135deg, #424040, #d1b885)",
               borderRadius: "12px",
               padding: "24px 16px",
               textAlign: "center",

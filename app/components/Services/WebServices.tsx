@@ -16,7 +16,7 @@ const cards = [
     ),
     title: "E-commerce Website Development",
     description: "Custom solutions for online stores.",
-    color: "#4f46e5",
+    color: "#272726",
   },
   {
     icon: (
@@ -27,7 +27,7 @@ const cards = [
     ),
     title: "CMS/Custom Website Development",
     description: "Tailored content management systems and custom-built websites.",
-    color: "#7c3aed",
+    color: "#272726",
   },
   {
     icon: (
@@ -39,7 +39,7 @@ const cards = [
     ),
     title: "Application Website Development",
     description: "Websites designed to support various applications.",
-    color: "#6d28d9",
+    color: "#272726",
   },
   {
     icon: (
@@ -50,7 +50,7 @@ const cards = [
     ),
     title: "E-Learning Platforms",
     description: "Specialized platforms catering to education.",
-    color: "#4f46e5",
+    color: "#272726",
   },
   {
     icon: (
@@ -63,7 +63,7 @@ const cards = [
     ),
     title: "Social Networking Platforms",
     description: "Connecting people through interactive websites.",
-    color: "#7c3aed",
+    color: "#272726",
   },
   {
     icon: (
@@ -75,7 +75,7 @@ const cards = [
     ),
     title: "CRM Platforms",
     description: "Managing customer relationships efficiently.",
-    color: "#6d28d9",
+    color: "#272726",
   },
 ];
 
