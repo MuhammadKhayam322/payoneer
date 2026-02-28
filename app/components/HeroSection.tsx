@@ -4,7 +4,7 @@ import Link from "next/link";
 const PaymentHero: React.FC = () => {
   return (
     <div
-      className="relative w-full overflow-hidden"
+      className="relative w-full"
       style={{
         minHeight: "520px",
         height: "90vh",
@@ -19,7 +19,7 @@ const PaymentHero: React.FC = () => {
       >
         <div>
           <h1
-            className="font-bold text-gray-300 leading-tight mb-6 text-7xl sm:text-4xl md:text-5xl"
+            className="font-bold text-gray-300 leading-tight mb-6 text-7xl sm:text-2xl md:text-4xl"
             style={{ maxWidth: "900px" }}
           >
             Elevating Brands Above the Noise
