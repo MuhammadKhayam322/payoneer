@@ -14,12 +14,11 @@ const AvatarBadge: React.FC<AvatarBadgeProps> = ({
   style,
 }) => (
   <div
-    className="absolute flex items-center gap-2  rounded-full shadow-lg pr-3"
+    className="absolute flex items-center gap-2  rounded-full shadow-lg pr-3
+    "
     style={{ zIndex: 20, ...style }}
   >
-    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden flex-shrink-0 border-2 border-white shadow">
-      <img src={src} alt="avatar" className="w-full h-full object-cover" />
-    </div>
+    
     <div className="flex flex-col">
       <div className="flex items-center gap-1">
         <div className="w-3 h-3 rounded-sm bg-orange-400 flex items-center justify-center">
@@ -69,14 +68,7 @@ const PaymentHero: React.FC = () => {
           zIndex: 1,
         }}
       />
-      <div
-        className="absolute bottom-16 left-4 w-16 h-16 sm:w-20 sm:h-20 rounded-full opacity-70"
-        style={{
-          background: "radial-gradient(circle, #f472b6, #ec4899)",
-          filter: "blur(6px)",
-          zIndex: 1,
-        }}
-      />
+      
       <div
         className="absolute bottom-8 left-1/2 -translate-x-32 w-5 h-5 rounded-full bg-cyan-400 shadow-lg"
         style={{ zIndex: 2 }}
@@ -122,7 +114,7 @@ const PaymentHero: React.FC = () => {
         <div style={{ marginTop: "-25vh" }}>
           <h1
             className="
-    font-bold text-gray-300 leading-tight mb-6
+    font-bold text-gray-300 leading-tight 
     text-4xl
     sm:text-5xl
     md:text-6xl
