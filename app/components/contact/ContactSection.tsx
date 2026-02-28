@@ -1,8 +1,24 @@
 "use client";
 
-import { useState, ReactElement } from "react";
+import { useState, useEffect, ReactElement } from "react";
+
+function useWindowWidth() {
+  const [width, setWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 1200
+  );
+  useEffect(() => {
+    const handler = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler);
+  }, []);
+  return width;
+}
 
 export default function ContactPage(): ReactElement {
+  const width = useWindowWidth();
+  const isMobile = width < 480;
+  const isTablet = width >= 480 && width < 768;
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -75,23 +91,22 @@ export default function ContactPage(): ReactElement {
   return (
     <section
       style={{
-          background:
+        background:
           "linear-gradient(135deg, #0a0a14 0%, #0d0f1a 50%, #080c18 100%)",
         minHeight: "100vh",
-        padding: "60px 24px",
+        padding: isMobile ? "40px 16px" : isTablet ? "50px 20px" : "60px 24px",
         fontFamily: "'Helvetica Neue', Arial, sans-serif",
         position: "relative",
         overflow: "hidden",
       }}
     >
-    
       <div style={{ position: "relative", zIndex: 1, maxWidth: "1000px", margin: "0 auto" }}>
 
         {/* Info Cards */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
+            gridTemplateColumns: isMobile ? "1fr" : isTablet ? "repeat(2, 1fr)" : "repeat(3, 1fr)",
             gap: "20px",
             marginBottom: "48px",
           }}
@@ -124,7 +139,7 @@ export default function ContactPage(): ReactElement {
             background: "rgba(255,255,255,0.05)",
             border: "1px solid rgba(255,255,255,0.1)",
             borderRadius: "16px",
-            padding: "48px 40px",
+            padding: isMobile ? "28px 20px" : isTablet ? "36px 28px" : "48px 40px",
           }}
         >
           <h2
@@ -143,7 +158,7 @@ export default function ContactPage(): ReactElement {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "1fr 1fr",
+              gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
               gap: "20px",
               marginBottom: "20px",
             }}
