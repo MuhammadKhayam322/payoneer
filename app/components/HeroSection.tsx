@@ -22,7 +22,22 @@ const AvatarBadge: React.FC<AvatarBadgeProps> = ({
     <div className="flex flex-col">
       <div className="flex items-center gap-1">
         <div className="w-3 h-3 rounded-sm bg-orange-400 flex items-center justify-center">
-        
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+            <rect
+              x="0.5"
+              y="2"
+              width="7"
+              height="5"
+              rx="0.5"
+              stroke="white"
+              strokeWidth="0.8"
+            />
+            <path
+              d="M2 2V1.5C2 0.67 2.67 0 3.5 0H4.5C5.33 0 6 0.67 6 1.5V2"
+              stroke="white"
+              strokeWidth="0.8"
+            />
+          </svg>
         </div>
         <span className="text-[10px] font-bold text-gray-800">{amount}</span>
       </div>
@@ -43,16 +58,8 @@ const PaymentHero: React.FC = () => {
           "linear-gradient(135deg, #0a0a14 0%, #0d0f1a 50%, #080c18 100%)",
       }}
     >
-      {/* Gradient blobs - background decorations */}
-      <div
-        className="absolute top-8 right-8 w-24 h-24 sm:w-32 sm:h-32 rounded-full opacity-60"
-        style={{
-          background:
-            "linear-gradient(135deg, #0a0a14 0%, #0d0f1a 50%, #080c18 100%)",
-          filter: "blur(8px)",
-          zIndex: 1,
-        }}
-      />
+     
+      
       
       <div
         className="absolute bottom-8 left-1/2 -translate-x-32 w-5 h-5 rounded-full bg-cyan-400 shadow-lg"
