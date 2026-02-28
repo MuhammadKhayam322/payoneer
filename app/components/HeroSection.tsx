@@ -10,6 +10,7 @@ const PaymentHero: React.FC = () => {
         height: "90vh",
         maxHeight: "700px",
         background: "#0a0a14",
+        
       }}
     >
       {/* Main Content - centered text */}
@@ -19,7 +20,7 @@ const PaymentHero: React.FC = () => {
       >
         <div>
           <h1
-            className="font-bold text-gray-300 leading-tight mb-6 text-7xl sm:text-2xl md:text-7xl"
+            className="font-bold text-gray-300 leading-tight mb-6 text-5xl sm:text-2xl md:text-7xl"
             style={{ maxWidth: "900px" }}
           >
             Elevating Brands Above the Noise
