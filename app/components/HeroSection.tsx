@@ -98,41 +98,7 @@ const PaymentHero: React.FC = () => {
           zIndex: 3,
         }}
       >
-        <svg
-          className="w-full h-full"
-          viewBox="0 0 1400 1400"
-          preserveAspectRatio="xMidYMid meet"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <linearGradient
-              id="rainbowGradient"
-              x1="0%"
-              y1="50%"
-              x2="100%"
-              y2="50%"
-            >
-              <stop offset="0%" stopColor="#f97316" />
-              <stop offset="16%" stopColor="#eab308" />
-              <stop offset="33%" stopColor="#84cc16" />
-              <stop offset="50%" stopColor="#22c55e" />
-              <stop offset="66%" stopColor="#06b6d4" />
-              <stop offset="83%" stopColor="#3b82f6" />
-              <stop offset="100%" stopColor="#06b6d4" />
-            </linearGradient>
-          </defs>
-          <circle
-            cx="700"
-            cy="700"
-            r="600"
-            stroke="url(#rainbowGradient)"
-            strokeWidth="50"
-            fill="none"
-            strokeLinecap="round"
-          />
-        </svg>
-
+        
         {/* Grid icon - top right area */}
         <div
           className="absolute bg-white rounded-xl shadow-md flex items-center justify-center"
@@ -144,12 +110,7 @@ const PaymentHero: React.FC = () => {
             zIndex: 20,
           }}
         >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <rect x="2" y="2" width="6" height="6" rx="1" fill="#94a3b8" />
-            <rect x="12" y="2" width="6" height="6" rx="1" fill="#94a3b8" />
-            <rect x="2" y="12" width="6" height="6" rx="1" fill="#94a3b8" />
-            <rect x="12" y="12" width="6" height="6" rx="1" fill="#94a3b8" />
-          </svg>
+         
         </div>
       </div>
 
