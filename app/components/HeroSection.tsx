@@ -19,7 +19,7 @@ const PaymentHero: React.FC = () => {
       >
         <div>
           <h1
-            className="font-bold text-gray-300 leading-tight mb-6 text-7xl sm:text-2xl md:text-4xl"
+            className="font-bold text-gray-300 leading-tight mb-6 text-7xl sm:text-2xl md:text-7xl"
             style={{ maxWidth: "900px" }}
           >
             Elevating Brands Above the Noise
