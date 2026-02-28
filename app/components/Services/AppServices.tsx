@@ -1,8 +1,8 @@
 // ServiceProtection.tsx
 "use client";
 
-import { ReactElement } from "react";
 
+import { ReactElement, useState, useEffect } from "react";
 import ServiceCard from "../ServiceCard";
 
 const cards = [
@@ -82,14 +82,40 @@ const cards = [
     color: "linear-gradient(135deg, #717732, #05063d)",
   },
 ];
-
+function useWindowWidth() {
+  const [width, setWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 1200
+  );
+  useEffect(() => {
+    const handler = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler);
+  }, []);
+  return width;
+}
 export default function AppServices(): ReactElement {
+  const width = useWindowWidth();
+
+  const gridColumns =
+    width < 480
+      ? "1fr"
+      : width < 768
+      ? "repeat(2, 1fr)"
+      : "repeat(3, 1fr)";
+
+  const sectionPadding =
+    width < 480
+      ? "50px 20px 60px"
+      : width < 768
+      ? "60px 28px 70px"
+      : "70px 40px 80px";
+
   return (
     <section
       style={{
         background:
           "linear-gradient(135deg, #0a0a14 0%, #0d0f1a 50%, #080c18 100%)",
-        padding: "70px 40px 80px",
+        padding: sectionPadding,
         fontFamily: "'Helvetica Neue', Arial, sans-serif",
         minHeight: "520px",
       }}
@@ -110,7 +136,7 @@ export default function AppServices(): ReactElement {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
+          gridTemplateColumns: gridColumns,
           gap: "20px",
           maxWidth: "1000px",
           margin: "0 auto",

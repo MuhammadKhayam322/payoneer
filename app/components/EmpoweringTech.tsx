@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const CircleIcon = ({ children }: { children: React.ReactNode }) => (
   <div
@@ -24,7 +24,6 @@ const features = [
   {
     icon: (
       <CircleIcon>
-        {/* Code icon </> */}
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
           <path d="M8 6L2 12L8 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           <path d="M16 6L22 12L16 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -38,7 +37,6 @@ const features = [
   {
     icon: (
       <CircleIcon>
-        {/* Team / Users icon */}
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
           <circle cx="9" cy="7" r="3" stroke="white" strokeWidth="1.8" fill="none"/>
           <path d="M3 20c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="white" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
@@ -54,7 +52,6 @@ const features = [
   {
     icon: (
       <CircleIcon>
-        {/* Rocket icon */}
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
           <path
             d="M12 2C12 2 7 6 7 13l2 2c1-1 2-1.5 3-1.5s2 .5 3 1.5l2-2c0-7-5-11-5-11z"
@@ -75,7 +72,6 @@ const features = [
   {
     icon: (
       <CircleIcon>
-        {/* Trophy icon */}
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
           <path
             d="M8 3h8v8a4 4 0 01-8 0V3z"
@@ -97,7 +93,63 @@ const features = [
   },
 ];
 
+function useBreakpoint() {
+  const [width, setWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 1200
+  );
+
+  useEffect(() => {
+    const handler = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler);
+  }, []);
+
+  return {
+    isMobile: width < 480,
+    isTablet: width >= 480 && width < 768,
+    isSmallDesktop: width >= 768 && width < 1024,
+    isDesktop: width >= 1024,
+    width,
+  };
+}
+
 export default function EmpoweringTech() {
+  const { isMobile, isTablet, isSmallDesktop } = useBreakpoint();
+
+  const getCardGridStyles = () => {
+    if (isMobile) {
+      return {
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gap: "12px",
+        overflowX: "hidden" as const,
+      };
+    }
+    if (isTablet) {
+      return {
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gap: "14px",
+        overflowX: "hidden" as const,
+      };
+    }
+    if (isSmallDesktop) {
+      return {
+        display: "grid",
+        gridTemplateColumns: "repeat(2, 1fr)",
+        gap: "16px",
+        overflowX: "hidden" as const,
+      };
+    }
+    // Desktop: original flex row
+    return {
+      display: "flex",
+      gap: "16px",
+      overflowX: "hidden" as const,
+      scrollBehavior: "smooth" as const,
+    };
+  };
+
   return (
     <section
       style={{
@@ -106,7 +158,7 @@ export default function EmpoweringTech() {
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
-        padding: "80px 60px",
+        padding: isMobile ? "60px 20px" : isTablet ? "70px 32px" : "80px 60px",
         position: "relative",
         overflow: "hidden",
         fontFamily: "'DM Sans', sans-serif",
@@ -143,7 +195,7 @@ export default function EmpoweringTech() {
         style={{
           maxWidth: "1200px",
           margin: "0 auto",
-          width: "80%",
+          width: isMobile ? "100%" : isTablet ? "95%" : "80%",
           justifyContent: "center",
           display: "flex",
           flexDirection: "column",
@@ -152,7 +204,7 @@ export default function EmpoweringTech() {
         }}
       >
         {/* Header */}
-        <div style={{ marginBottom: "56px" }}>
+        <div style={{ marginBottom: isMobile ? "36px" : "56px" }}>
           <h2
             style={{
               fontSize: "clamp(28px, 4vw, 42px)",
@@ -180,14 +232,7 @@ export default function EmpoweringTech() {
           </p>
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            gap: "16px",
-            overflowX: "hidden",
-            scrollBehavior: "smooth",
-          }}
-        >
+        <div style={getCardGridStyles()}>
           {features.map((f, i) => (
             <FeatureCard key={i} {...f} />
           ))}
@@ -222,8 +267,6 @@ function FeatureCard({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        minWidth: "200px",
-        flex: "1 0 200px",
         background: hovered
           ? "linear-gradient(135deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03))"
           : "linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01))",

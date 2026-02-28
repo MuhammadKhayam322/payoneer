@@ -9,8 +9,8 @@ function page() {
   return (
     <div>
        <HeroSection
-      title="Powerful E-Commerce Solutions"
-      description="BrandRaize builds fast, scalable online stores that drive sales and grow your brand."
+      title="We Create Exceptionally Creative Web Designs"
+      description="BrandRaize knows your high standards and loves to meet them ingeniously."
       readMoreLink="/services/ecommerce/read-more"
       getStartedLink="/contact"
     />
