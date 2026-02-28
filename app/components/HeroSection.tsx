@@ -22,22 +22,7 @@ const AvatarBadge: React.FC<AvatarBadgeProps> = ({
     <div className="flex flex-col">
       <div className="flex items-center gap-1">
         <div className="w-3 h-3 rounded-sm bg-orange-400 flex items-center justify-center">
-          <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-            <rect
-              x="0.5"
-              y="2"
-              width="7"
-              height="5"
-              rx="0.5"
-              stroke="white"
-              strokeWidth="0.8"
-            />
-            <path
-              d="M2 2V1.5C2 0.67 2.67 0 3.5 0H4.5C5.33 0 6 0.67 6 1.5V2"
-              stroke="white"
-              strokeWidth="0.8"
-            />
-          </svg>
+        
         </div>
         <span className="text-[10px] font-bold text-gray-800">{amount}</span>
       </div>
@@ -49,7 +34,7 @@ const AvatarBadge: React.FC<AvatarBadgeProps> = ({
 const PaymentHero: React.FC = () => {
   return (
     <div
-      className="relative w-full overflow-hidden "
+      className="relative w-full  "
       style={{
         minHeight: "520px",
         height: "90vh",
