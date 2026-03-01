@@ -10,7 +10,7 @@ const PaymentHero: React.FC = () => {
         height: "90vh",
         maxHeight: "700px",
         background: "#0a0a14",
-        
+        marginTop:0,
       }}
     >
       {/* Main Content - centered text */}
